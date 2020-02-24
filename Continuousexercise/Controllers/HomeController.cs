@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Continuousexercise.Models;
-using System.Net;
+
 
 namespace Continuousexercise.Controllers
 {
@@ -48,13 +48,13 @@ namespace Continuousexercise.Controllers
 
 
         }
-        public IActionResult Haku()   // näyttää hakukentän jolla käyttäjä hakee nimen perusteella
+        public IActionResult Haku()   
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Haku(string haettuaihe)   //post hakukentästä, johon käyttäjä syöttää titlehaun nimen perusteella
+        public IActionResult Haku(string haettuaihe)  
         {
 
             CEContext db = new CEContext();
@@ -81,7 +81,7 @@ namespace Continuousexercise.Controllers
         }
 
 
-        public IActionResult Aiheet()    // kaikki aiheet listattuna
+        public IActionResult Aiheet()   
         {
             CEContext db = new CEContext();
 
@@ -163,11 +163,7 @@ namespace Continuousexercise.Controllers
             }
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
